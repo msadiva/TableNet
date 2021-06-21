@@ -1,0 +1,44 @@
+<html>
+  <style>
+    .custom_text {color:slateblue; text-align: center; font-size: 30px;}
+    .title_custom_text {color:slateblue; text-align: center; font-size: 80px;}
+    textarea {width: 1000px;
+              height: 1000px;
+              align-content: flex-start;
+              overflow: auto;}
+    .column {
+      float : left ;
+      width : 33.33%;
+      padding : 5px ;
+    }
+    .row::after {
+      content: "";
+      clear : both ;
+      display : table ;
+
+    }
+
+
+  </style>
+
+  <body> 
+    <h3 class = "title_custom_text"> Table Data </h3>
+    <div class = "row">
+      <div class = "column">
+        <figure>
+        <img src = "{{url_for('static', filename = 'original_image.bmp')}}" style = "width:100%">
+        <figcaption> Original Image </figcaption>
+        </figure>
+        </div>
+        <div class = "column">
+          <figure>
+          <img src = "{{url_for('static', filename = 'output_alpha.png')}}" style = "width:100%">
+          <figcaption> Cropped Table Image </figcaption>
+          </figure>
+          </div>
+    </div>
+    <div> 
+      <pre id = "body" name = "body"> {{ text }} </pre>
+    </div>
+  </body>
+</html>
